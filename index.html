@@ -31,22 +31,43 @@
     <button onclick="choose('flame')">A molten bridge over fire</button>
     <button onclick="choose('storm')">A staircase struck by lightning</button>
     <button onclick="choose('mind')">A door glowing with runes</button>
+
+      <!-- Screen 2: Trial 1 -->
+  <div class="screen" id="screen2">
+    <h1>Trial One</h1>
+    <p>You enter the Trial Chamber. Four paths open before you. Which do you choose?</p>
+    <button onclick="choose('shadow')">A tunnel of swirling violet mist</button>
+    <button onclick="choose('flame')">A molten bridge over fire</button>
+    <button onclick="choose('storm')">A staircase struck by lightning</button>
+    <button onclick="choose('mind')">A door glowing with runes</button>
   </div>
 
-  <script>
-    let choices = [];
+  <!-- Screen 3: Trial 2 -->
+  <div class="screen" id="screen3">
+    <h1>Trial Two</h1>
+    <p>The path grows darker. You hear whispers — what do you do?</p>
+    <button onclick="choose('shadow')">Step boldly into the shadows</button>
+    <button onclick="choose('flame')">Light a torch and blaze ahead</button>
+    <button onclick="choose('storm')">Call the storm with your voice</button>
+    <button onclick="choose('mind')">Focus your mind to calm the whispers</button>
+  </div>
 
-    function nextScreen(screenNumber) {
-      document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-      document.getElementById(`screen${screenNumber}`).classList.add('active');
-    }
+  <!-- Screen 4: Trial 3 -->
+  <div class="screen" id="screen4">
+    <h1>Final Trial</h1>
+    <p>The council watches. How do you prove your worth?</p>
+    <button onclick="choose('shadow')">Move unseen like a shadow</button>
+    <button onclick="choose('flame')">Show fierce courage like fire</button>
+    <button onclick="choose('storm')">Unleash the fury of the storm</button>
+    <button onclick="choose('mind')">Outwit the council with your wisdom</button>
+  </div>
 
-    function choose(type) {
-      choices.push(type);
-      // Add more screens here or call nextScreen(3)
-      alert("You chose: " + type + ". We'll save that.");
-    }
-  </script>
-
+  <!-- Screen 5: Fate Reveal -->
+  <div class="screen" id="screen5">
+    <h1>Your Dragonbond Awaits</h1>
+    <p id="resultText"></p>
+    <button onclick="restart()">Try Again</button>
+  </div>
+<script src="script.js"></script>
 </body>
 </html>
