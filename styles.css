@@ -69,6 +69,27 @@ button:hover {
   transform: scale(1.05);
 }
 
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 1rem 1.5rem; /* row gap, column gap */
+  justify-items: center; /* center buttons horizontally */
+  margin-top: 1rem;
+}
+
+.choices-grid button {
+  width: 100%;
+  max-width: 250px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+  .choices-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Optional: Add a fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
