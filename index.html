@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dragonbound Trials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cinzel', serif;
+      background-color: #0f0f1b;
+      color: #e0dede;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .screen {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #c084fc;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background: #6d28d9;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #5b21b6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen 1: Welcome -->
+  <div class="screen active" id="screen1">
+    <h1>Dragonbound Trials</h1>
+    <p>You have been summoned by the High Council. The Trials await. Your choices will reveal your dragon bond — and your destiny.</p>
+    <button onclick="nextScreen(2)">Begin the Trial</button>
+  </div>
+
+  <!-- Screen 2: Trial Question 1 -->
+  <div class="screen" id="screen2">
+    <h1>Trial One</h1>
+    <p>You enter the Trial Chamber. Four paths open before you. Which do you choose?</p>
+    <button onclick="choose('shadow')">A tunnel of swirling violet mist</button>
+    <button onclick="choose('flame')">A molten bridge over fire</button>
+    <button onclick="choose('storm')">A staircase struck by lightning</button>
+    <button onclick="choose('mind')">A door glowing with runes</button>
+  </div>
+
+  <script>
+    let choices = [];
+
+    function nextScreen(screenNumber) {
+      document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+      document.getElementById(`screen${screenNumber}`).classList.add('active');
+    }
+
+    function choose(type) {
+      choices.push(type);
+      // Add more screens here or call nextScreen(3)
+      alert("You chose: " + type + ". We'll save that.");
+    }
+  </script>
+
+</body>
+</html>
