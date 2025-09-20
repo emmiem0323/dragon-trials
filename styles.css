@@ -70,6 +70,13 @@ button:hover {
   transform: scale(1.05);
 }
 
+#screen1 > button,
+#screen5 > button {
+  display: block;
+  margin: 1rem auto 0 auto; /* top margin + center horizontally */
+  max-width: 200px;
+}
+
 /* Choices Grid - 2x2 layout for choice buttons */
 .choices-grid {
   display: grid;
