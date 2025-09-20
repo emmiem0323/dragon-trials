@@ -7,7 +7,7 @@ body {
   color: #e0dede;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   height: 100vh;
 }
@@ -29,13 +29,14 @@ body {
 /* Screens */
 .screen {
   display: none;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
   max-width: 600px;
 }
 
 .screen.active {
   display: block;
+  animation: fadeIn 0.6s ease;
 }
 
 /* Typography */
@@ -69,11 +70,12 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Choices Grid - 2x2 layout for choice buttons */
 .choices-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem 1.5rem; /* row gap, column gap */
-  justify-items: center; /* center buttons horizontally */
+  justify-items: center;
   margin-top: 1rem;
 }
 
@@ -84,18 +86,21 @@ button:hover {
   font-size: 1rem;
 }
 
+/* Responsive: stack buttons on smaller screens */
 @media (max-width: 500px) {
   .choices-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Optional: Add a fade-in animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.screen.active {
-  animation: fadeIn 0.6s ease;
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
