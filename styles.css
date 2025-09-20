@@ -7,8 +7,8 @@ body {
   color: #e0dede;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: center;
+  justify-content: center;   /* <-- center vertically */
+  align-items: center;       /* <-- center horizontally */
   height: 100vh;
 }
 
@@ -29,7 +29,7 @@ body {
 /* Screens */
 .screen {
   display: none;
-  text-align: left;
+  text-align: center;
   padding: 2rem;
   max-width: 600px;
 }
@@ -73,7 +73,7 @@ button:hover {
 #screen1 > button,
 #screen5 > button {
   display: block;
-  margin: 1rem auto 0 auto; /* top margin + center horizontally */
+  margin: 1rem auto 0 auto;
   max-width: 200px;
 }
 
