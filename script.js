@@ -8,6 +8,7 @@ function nextScreen(screenNumber) {
 }
 
 function choose(type) {
+  console.log(`Choice made: ${type}, currentScreen: ${currentScreen}`);
   choices.push(type);
 
   if (currentScreen < 4) {
